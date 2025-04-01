@@ -1,14 +1,15 @@
-import time
 from pynput import keyboard
 import threading
 import sys
+import Stopwatch
 
 text = []
+timings = []
 keyphrase = "the quick brown fox jumped over the lazy dog"
+stopwatch =  Stopwatch.Stopwatch()
 
 def on_key_press(key): 
-    # if str(key) == 'Key.ctrl_l':
-    #     sys.exit()
+    stopwatch.start()
     try:
         text.append(key.char)
         print(key)
@@ -23,15 +24,22 @@ def on_key_press(key):
     
 
 def on_key_release(key):
-    print(text)
+    stopwatch.stop()
+    timings.append(stopwatch.get_elapsed_time())
+    stopwatch.reset()
+
 
 def check():
     global text
+    global timings
     while True:
         if len(text) == len(keyphrase):
             if text == list(keyphrase):
                 print("Correct!")
+                print(text)
+                print(timings)
                 text = []
+                timings = []
             else:
                 print("Nope")
                 text = []
