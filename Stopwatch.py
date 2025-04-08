@@ -22,6 +22,13 @@ class Stopwatch:
         self._start_time = None
 
     def get_elapsed_time(self):
-         if self._running:
+        if self._running:
             return self._elapsed_time + (time.perf_counter() - self._start_time)
-         return self._elapsed_time
+        return self._elapsed_time
+
+    @property
+    def running(self):
+        return self._running
+
+    def __str__(self):
+        return f"{self.get_elapsed_time():.4f} seconds"
