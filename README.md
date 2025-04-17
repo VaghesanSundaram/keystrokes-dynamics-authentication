@@ -29,7 +29,7 @@ the quick brown fox jumped over the lazy dog
 1. **Install dependencies:**
 
     ```bash
-    pip install pynput scipy numpy
+    pip install -r requirements.txt
     ```
 
 2. **Run the script:**
