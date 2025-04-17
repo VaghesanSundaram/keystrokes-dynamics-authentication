@@ -1,1 +1,3 @@
 profile.npy
+__pycache__/
+*.pyc
