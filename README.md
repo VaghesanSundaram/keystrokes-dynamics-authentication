@@ -51,6 +51,13 @@ the quick brown fox jumped over the lazy dog
 
 - `profile.npy`: Saved mean timing profile after successful enrollment.
 
+## Future Updates
+
+- Timing profile visualizer with matplotlib
+- Login GUI that can handle multiple users
+  - Setting custom keyphrases with minimum length
+  - Saving multiple profiles with different keyphrases
+  
 ## Notes
 
 - Only alphanumeric keys and spaces are processed.
